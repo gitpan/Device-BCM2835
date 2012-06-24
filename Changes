@@ -1,0 +1,6 @@
+Revision history for Perl extension Device::BCM2835.
+
+1.0  Sun Jun 24 16:19:31 2012
+	- original version; created by h2xs 1.23 with options
+		-n Device::BCM2835 /usr/local/projects/bcm2835/src/bcm2835.h -L /usr/local/lib -lbcm2835
+
