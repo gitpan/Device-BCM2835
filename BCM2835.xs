@@ -10,7 +10,8 @@
 
 MODULE = Device::BCM2835		PACKAGE = Device::BCM2835	PREFIX=bcm2835_		
 
-PROTOTYPES: ENABLE
+#prototypes are wrong for length(buf) in spi_transfern :-(
+#PROTOTYPES: ENABLE
 INCLUDE: const-xs.inc
 
 #
@@ -124,3 +125,5 @@ bcm2835_spi_setChipSelectPolarity(uint8_t cs, uint8_t active)
 uint8_t 
 bcm2835_spi_transfer(uint8_t value)
 
+void 
+bcm2835_spi_transfern(char *buf, short length(buf))

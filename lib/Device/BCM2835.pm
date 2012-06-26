@@ -355,7 +355,7 @@ our @EXPORT = qw(
         RPI_GPIO_P1_26
 );
 
-our $VERSION = '1.2';
+our $VERSION = '1.3';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -691,13 +691,24 @@ return to the complement (inactive) value.
  cs The chip select pin to affect
  active Whether the chip select pin is to be active HIGH
 
-    my $data = spi_transfer($value);
-Transfers data to and from the curently selected SPI slave.
-Asserts the currently selected CS pins (as previously set by spi_chipSelect.
-Clocks the 8 bit value out on MOSI, and simulataneously clocks in data from MISO. 
-Returns the read data.
+=item     my $data = spi_transfer($value);
+Transfers one byte to and from the currently selected SPI slave.
+Asserts the currently selected CS pins (as previously set by bcm2835_spi_chipSelect) 
+during the transfer.
+Clocks the 8 bit value out on MOSI, and simultaneously clocks in data from MISO. 
+Returns the read data byte from the slave.
+polled transfer as per section 10.6.1 of teh BCM 2835 ARM Peripherls manual
  value The 8 bit data byte to write to MOSI
  return The 8 bit byte simultaneously read from  MISO
+
+=item    spi_transfern($buf);
+Transfers any number of bytes to and from the currently selected SPI slave.
+Asserts the currently selected CS pins (as previously set by bcm2835_spi_chipSelect) 
+during the transfer.
+Clocks the len 8 bit bytes out on MOSI, and simultaneously clocks in data from MISO. 
+The returned data from the slave replaces the transmitted data in the buffer.
+Uses polled transfer as per section 10.6.1 of teh BCM 2835 ARM Peripherls manual
+ buf The buffer containing the bytes to be transmitted. ALl teh bytes in teh buffer will be sent, and    the received data from the slave will replace the contents
 
 =back
 
@@ -736,7 +747,7 @@ BCM 2835 GPIO address space:
  use Device::BCM2835;
  use strict;
 
- Device::BCM2835::set_debug(1);
+ #Device::BCM2835::set_debug(1);
  Device::BCM2835::init() || die "Could not init library";
 
  # Must be run as root
@@ -748,12 +759,19 @@ BCM 2835 GPIO address space:
  Device::BCM2835::spi_chipSelect(Device::BCM2835::BCM2835_SPI_CS0);                      # The default
  Device::BCM2835::spi_setChipSelectPolarity(Device::BCM2835::BCM2835_SPI_CS0, 0);      # the default
 
- # Send a byte to the slave and simultaneously read a byte back from the slave
- # If you tie MISO to MOSI, you should read back what was sent
- my $data = Device::BCM2835::spi_transfer(0x23);
- printf "Read from SPI: %02X\n", $data;
+ # Send a some bytes to the slave and simultaneously read 
+ # some bytes back from the slave
+ # Most SPI devices expect one or 2 bytes of command, after which they will send back
+ # some data. In such a case you will have the command bytes first in the buffer,
+ # followed by as many 0 bytes as you expect returned data bytes. After the transfer, you 
+ # Can the read the reply bytes from the buffer.
+ # If you tie MISO to MOSI, you should read back what was sent.
+ my $data = pack('H*', '01021133');
+ Device::BCM2835::spi_transfern($data);
+ my $x = unpack('H*', $data);
+ print "read: $x\n";
 
- Device::BCM2835::spi_end();
+Device::BCM2835::spi_end();
 
 =head2 EXPORT
 
