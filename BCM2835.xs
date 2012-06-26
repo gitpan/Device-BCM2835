@@ -100,3 +100,27 @@ bcm2835_gpio_write(uint8_t pin, uint8_t on)
 void
 bcm2835_gpio_set_pud(uint8_t pin, uint8_t pud)
 
+void 
+bcm2835_spi_begin()
+
+void 
+bcm2835_spi_end()
+
+void
+bcm2835_spi_setBitOrder(uint8_t order)
+
+void 
+bcm2835_spi_setClockDivider(uint16_t divider)
+
+void 
+bcm2835_spi_setDataMode(uint8_t mode)
+
+void 
+bcm2835_spi_chipSelect(uint8_t cs)
+
+void 
+bcm2835_spi_setChipSelectPolarity(uint8_t cs, uint8_t active)
+
+uint8_t 
+bcm2835_spi_transfer(uint8_t value)
+

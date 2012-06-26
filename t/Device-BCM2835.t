@@ -122,7 +122,8 @@ Device::BCM2835::gpio_write(&Device::BCM2835::RPI_GPIO_P1_11, 1);
 
 Device::BCM2835::gpio_set_pud(&Device::BCM2835::RPI_GPIO_P1_11, &Device::BCM2835::BCM2835_GPIO_PUD_UP);
 
-
+Device::BCM2835::spi_begin();
+Device::BCM2835::spi_end();
 
 
 
