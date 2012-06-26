@@ -355,7 +355,7 @@ our @EXPORT = qw(
         RPI_GPIO_P1_26
 );
 
-our $VERSION = '1.1';
+our $VERSION = '1.2';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -701,7 +701,7 @@ Returns the read data.
 
 =back
 
-=head1 Example
+=head1 Example GPIO program
 
 This simple program blinks RPi GPIO pin 11 every 500ms. 
 It must be run as root, in order to access the 
@@ -730,6 +730,30 @@ BCM 2835 GPIO address space:
      Device::BCM2835::gpio_write(&Device::BCM2835::RPI_GPIO_P1_11, 0);
      Device::BCM2835::delay(500); # Milliseconds
  }
+
+=head1 Example SPI program
+
+ use Device::BCM2835;
+ use strict;
+
+ Device::BCM2835::set_debug(1);
+ Device::BCM2835::init() || die "Could not init library";
+
+ # Must be run as root
+
+ Device::BCM2835::spi_begin();
+ Device::BCM2835::spi_setBitOrder(Device::BCM2835::BCM2835_SPI_BIT_ORDER_MSBFIRST);      # The default
+ Device::BCM2835::spi_setDataMode(Device::BCM2835::BCM2835_SPI_MODE0);                   # The default
+ Device::BCM2835::spi_setClockDivider(Device::BCM2835::BCM2835_SPI_CLOCK_DIVIDER_65536); # The default
+ Device::BCM2835::spi_chipSelect(Device::BCM2835::BCM2835_SPI_CS0);                      # The default
+ Device::BCM2835::spi_setChipSelectPolarity(Device::BCM2835::BCM2835_SPI_CS0, 0);      # the default
+
+ # Send a byte to the slave and simultaneously read a byte back from the slave
+ # If you tie MISO to MOSI, you should read back what was sent
+ my $data = Device::BCM2835::spi_transfer(0x23);
+ printf "Read from SPI: %02X\n", $data;
+
+ Device::BCM2835::spi_end();
 
 =head2 EXPORT
 
