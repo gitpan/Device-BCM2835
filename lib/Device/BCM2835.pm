@@ -355,7 +355,7 @@ our @EXPORT = qw(
         RPI_GPIO_P1_26
 );
 
-our $VERSION = '1.3';
+our $VERSION = '1.4';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
