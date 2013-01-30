@@ -39,6 +39,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
         BCM2835_GPHEN0
         BCM2835_GPHEN1
         BCM2835_GPIO_BASE
+        BCM2835_GPIO_PWM
         BCM2835_GPIO_FSEL_ALT0
         BCM2835_GPIO_FSEL_ALT1
         BCM2835_GPIO_FSEL_ALT2
@@ -209,6 +210,7 @@ our @EXPORT = qw(
         BCM2835_GPHEN0
         BCM2835_GPHEN1
         BCM2835_GPIO_BASE
+        BCM2835_GPIO_PWM
         BCM2835_GPIO_FSEL_ALT0
         BCM2835_GPIO_FSEL_ALT1
         BCM2835_GPIO_FSEL_ALT2
@@ -355,7 +357,7 @@ our @EXPORT = qw(
         RPI_GPIO_P1_26
 );
 
-our $VERSION = '1.4';
+our $VERSION = '1.5';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -708,7 +710,8 @@ during the transfer.
 Clocks the len 8 bit bytes out on MOSI, and simultaneously clocks in data from MISO. 
 The returned data from the slave replaces the transmitted data in the buffer.
 Uses polled transfer as per section 10.6.1 of teh BCM 2835 ARM Peripherls manual
- buf The buffer containing the bytes to be transmitted. ALl teh bytes in teh buffer will be sent, and    the received data from the slave will replace the contents
+ buf The buffer containing the bytes to be transmitted. All the bytes in the buffer will be sent, and    
+the received data from the slave will replace the contents
 
 =back
 
@@ -800,6 +803,7 @@ None by default.
         BCM2835_GPHEN0
         BCM2835_GPHEN1
         BCM2835_GPIO_BASE
+        BCM2835_GPIO_PWM
         BCM2835_GPIO_FSEL_ALT0
         BCM2835_GPIO_FSEL_ALT1
         BCM2835_GPIO_FSEL_ALT2

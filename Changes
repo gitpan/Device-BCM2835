@@ -1,5 +1,8 @@
 Revision history for Perl extension Device::BCM2835.
 
+1.5 Thu Jan 31 06:57:35 EST 2013
+    Made all constants up to date, including BCM2835_GPIO_PWM, requested by Oskar Norin
+
 1.4 Sun Jan  6 08:20:52 EST 2013
     Added -lrt to Makefile.pL
 
