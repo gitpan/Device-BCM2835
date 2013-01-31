@@ -39,7 +39,6 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
         BCM2835_GPHEN0
         BCM2835_GPHEN1
         BCM2835_GPIO_BASE
-        BCM2835_GPIO_PWM
         BCM2835_GPIO_FSEL_ALT0
         BCM2835_GPIO_FSEL_ALT1
         BCM2835_GPIO_FSEL_ALT2
@@ -210,7 +209,6 @@ our @EXPORT = qw(
         BCM2835_GPHEN0
         BCM2835_GPHEN1
         BCM2835_GPIO_BASE
-        BCM2835_GPIO_PWM
         BCM2835_GPIO_FSEL_ALT0
         BCM2835_GPIO_FSEL_ALT1
         BCM2835_GPIO_FSEL_ALT2
@@ -357,7 +355,7 @@ our @EXPORT = qw(
         RPI_GPIO_P1_26
 );
 
-our $VERSION = '1.5';
+our $VERSION = '1.6';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -803,7 +801,6 @@ None by default.
         BCM2835_GPHEN0
         BCM2835_GPHEN1
         BCM2835_GPIO_BASE
-        BCM2835_GPIO_PWM
         BCM2835_GPIO_FSEL_ALT0
         BCM2835_GPIO_FSEL_ALT1
         BCM2835_GPIO_FSEL_ALT2
