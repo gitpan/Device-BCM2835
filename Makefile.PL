@@ -8,7 +8,7 @@ WriteMakefile(
     PREREQ_PM         => {}, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Device/BCM2835.pm', # retrieve abstract from module
-       AUTHOR         => 'Mike McCauley <mikem@open.com.au>') : ()),
+       AUTHOR         => 'Mike McCauley <mikem@airspayce.com>') : ()),
     LIBS              => ['-L/usr/local/projects/bcm2835/src -lbcm2835 -lrt' ], # e.g., '-lm'
     DEFINE            => '', # e.g., '-DHAVE_SOMETHING'
     INC               => '-I/usr/local/projects/bcm2835/src', # e.g., '-I. -I/usr/include/other'

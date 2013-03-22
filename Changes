@@ -1,5 +1,8 @@
 Revision history for Perl extension Device::BCM2835.
 
+1.7 Fri Mar 22 10:08:14 EST 2013
+    Updated author and distribution location details to airspayce.com
+
 1.6 Thu Jan 31 18:01:17 EST 2013
     Fixed a problem with duplicate definitions of BCM2835_GPIO_PWM introduced
     in 1.5
@@ -12,11 +15,11 @@ Revision history for Perl extension Device::BCM2835.
 
 1.3 Tue Jun 26 16:01:49 EST 2012
     mikem added support for bcm2835_spi_transfern function from bcm2835 version 1.3
-    Requires version 1.3 from http://www.open.com.au/mikem/bcm2835/
+    Requires version 1.3 from http://www.airspayce.com/mikem/bcm2835/
 
 1.1 Tue Jun 26 13:31:10 EST 2012
     mikem added support for bcm2835_spi_* functions from bcm2835 version 1.2
-    Requires version 1.2 from http://www.open.com.au/mikem/bcm2835/
+    Requires version 1.2 from http://www.airspayce.com/mikem/bcm2835/
 
 1.0  Sun Jun 24 16:19:31 2012
 	- original version; created by h2xs 1.23 with options

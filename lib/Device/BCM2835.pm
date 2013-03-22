@@ -355,7 +355,7 @@ our @EXPORT = qw(
         RPI_GPIO_P1_26
 );
 
-our $VERSION = '1.6';
+our $VERSION = '1.7';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -447,7 +447,7 @@ Pin event detection is supported by polling (interrupts not supported).
 
 Building this module requires the bcm2835 library to be installed. 
 You can get the latest version from  
-http://www.open.com.au/mikem/bcm2835/
+http://www.airspayce.com/mikem/bcm2835/
 
 =over 4
 
@@ -952,15 +952,15 @@ You will need to familiar with the GPIO pinouts etc:
 
 http://elinux.org/RPi_Low-level_peripherals
 http://www.raspberrypi.org/wp-content/uploads/2012/02/BCM2835-ARM-Peripherals.pdf
-http://www.open.com.au/mikem/bcm2835
+http://www.airspayce.com/mikem/bcm2835
 
 =head1 AUTHOR
 
-Mike McCauley, E<lt>mikem@open.com.auE<gt>
+Mike McCauley, E<lt>mikem@airspayce.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2012 by Mike McCauley
+Copyright (C) 2012-2013 by Mike McCauley
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.14.2 or,
