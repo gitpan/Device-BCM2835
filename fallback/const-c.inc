@@ -446,7 +446,13 @@ constant_17 (pTHX_ const char *name, IV *iv_return) {
      BCM2835_GPIO_BASE BCM2835_GPIO_PADS BCM2835_GPPUDCLK0 BCM2835_GPPUDCLK1
      BCM2835_PAGE_SIZE BCM2835_PERI_BASE BCM2835_PWM0_DATA BCM2835_PWM1_DATA
      BCM2835_SPI0_BASE BCM2835_SPI0_DLEN BCM2835_SPI0_FIFO BCM2835_SPI0_LTOH
-     BCM2835_SPI_MODE0 BCM2835_SPI_MODE1 BCM2835_SPI_MODE2 BCM2835_SPI_MODE3 */
+     BCM2835_SPI_MODE0 BCM2835_SPI_MODE1 BCM2835_SPI_MODE2 BCM2835_SPI_MODE3
+     RPI_V2_GPIO_P1_03 RPI_V2_GPIO_P1_05 RPI_V2_GPIO_P1_07 RPI_V2_GPIO_P1_08
+     RPI_V2_GPIO_P1_10 RPI_V2_GPIO_P1_11 RPI_V2_GPIO_P1_12 RPI_V2_GPIO_P1_13
+     RPI_V2_GPIO_P1_15 RPI_V2_GPIO_P1_16 RPI_V2_GPIO_P1_18 RPI_V2_GPIO_P1_19
+     RPI_V2_GPIO_P1_21 RPI_V2_GPIO_P1_22 RPI_V2_GPIO_P1_23 RPI_V2_GPIO_P1_24
+     RPI_V2_GPIO_P1_26 RPI_V2_GPIO_P5_03 RPI_V2_GPIO_P5_04 RPI_V2_GPIO_P5_05
+     RPI_V2_GPIO_P5_06 */
   /* Offset 16 gives the best switch position.  */
   switch (name[16]) {
   case '0':
@@ -462,6 +468,11 @@ constant_17 (pTHX_ const char *name, IV *iv_return) {
     if (memEQ(name, "BCM2835_SPI_MODE", 16)) {
     /*                               0      */
       *iv_return = BCM2835_SPI_MODE0;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P1_1", 16)) {
+    /*                               0      */
+      *iv_return = RPI_V2_GPIO_P1_10;
       return PERL_constant_ISIV;
     }
     break;
@@ -480,6 +491,16 @@ constant_17 (pTHX_ const char *name, IV *iv_return) {
       *iv_return = BCM2835_SPI_MODE1;
       return PERL_constant_ISIV;
     }
+    if (memEQ(name, "RPI_V2_GPIO_P1_1", 16)) {
+    /*                               1      */
+      *iv_return = RPI_V2_GPIO_P1_11;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P1_2", 16)) {
+    /*                               1      */
+      *iv_return = RPI_V2_GPIO_P1_21;
+      return PERL_constant_ISIV;
+    }
     break;
   case '2':
     if (memEQ(name, "BCM2835_SPI_MODE", 16)) {
@@ -487,11 +508,113 @@ constant_17 (pTHX_ const char *name, IV *iv_return) {
       *iv_return = BCM2835_SPI_MODE2;
       return PERL_constant_ISIV;
     }
+    if (memEQ(name, "RPI_V2_GPIO_P1_1", 16)) {
+    /*                               2      */
+      *iv_return = RPI_V2_GPIO_P1_12;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P1_2", 16)) {
+    /*                               2      */
+      *iv_return = RPI_V2_GPIO_P1_22;
+      return PERL_constant_ISIV;
+    }
     break;
   case '3':
     if (memEQ(name, "BCM2835_SPI_MODE", 16)) {
     /*                               3      */
       *iv_return = BCM2835_SPI_MODE3;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P1_0", 16)) {
+    /*                               3      */
+      *iv_return = RPI_V2_GPIO_P1_03;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P1_1", 16)) {
+    /*                               3      */
+      *iv_return = RPI_V2_GPIO_P1_13;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P1_2", 16)) {
+    /*                               3      */
+      *iv_return = RPI_V2_GPIO_P1_23;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P5_0", 16)) {
+    /*                               3      */
+      *iv_return = RPI_V2_GPIO_P5_03;
+      return PERL_constant_ISIV;
+    }
+    break;
+  case '4':
+    if (memEQ(name, "RPI_V2_GPIO_P1_2", 16)) {
+    /*                               4      */
+      *iv_return = RPI_V2_GPIO_P1_24;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P5_0", 16)) {
+    /*                               4      */
+      *iv_return = RPI_V2_GPIO_P5_04;
+      return PERL_constant_ISIV;
+    }
+    break;
+  case '5':
+    if (memEQ(name, "RPI_V2_GPIO_P1_0", 16)) {
+    /*                               5      */
+      *iv_return = RPI_V2_GPIO_P1_05;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P1_1", 16)) {
+    /*                               5      */
+      *iv_return = RPI_V2_GPIO_P1_15;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P5_0", 16)) {
+    /*                               5      */
+      *iv_return = RPI_V2_GPIO_P5_05;
+      return PERL_constant_ISIV;
+    }
+    break;
+  case '6':
+    if (memEQ(name, "RPI_V2_GPIO_P1_1", 16)) {
+    /*                               6      */
+      *iv_return = RPI_V2_GPIO_P1_16;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P1_2", 16)) {
+    /*                               6      */
+      *iv_return = RPI_V2_GPIO_P1_26;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P5_0", 16)) {
+    /*                               6      */
+      *iv_return = RPI_V2_GPIO_P5_06;
+      return PERL_constant_ISIV;
+    }
+    break;
+  case '7':
+    if (memEQ(name, "RPI_V2_GPIO_P1_0", 16)) {
+    /*                               7      */
+      *iv_return = RPI_V2_GPIO_P1_07;
+      return PERL_constant_ISIV;
+    }
+    break;
+  case '8':
+    if (memEQ(name, "RPI_V2_GPIO_P1_0", 16)) {
+    /*                               8      */
+      *iv_return = RPI_V2_GPIO_P1_08;
+      return PERL_constant_ISIV;
+    }
+    if (memEQ(name, "RPI_V2_GPIO_P1_1", 16)) {
+    /*                               8      */
+      *iv_return = RPI_V2_GPIO_P1_18;
+      return PERL_constant_ISIV;
+    }
+    break;
+  case '9':
+    if (memEQ(name, "RPI_V2_GPIO_P1_1", 16)) {
+    /*                               9      */
+      *iv_return = RPI_V2_GPIO_P1_19;
       return PERL_constant_ISIV;
     }
     break;
@@ -1746,7 +1869,28 @@ my @names = (qw(BCM2835_BLOCK_SIZE BCM2835_CLOCK_BASE BCM2835_GPAFEN0
             {name=>"RPI_GPIO_P1_22", type=>"IV", macro=>"1"},
             {name=>"RPI_GPIO_P1_23", type=>"IV", macro=>"1"},
             {name=>"RPI_GPIO_P1_24", type=>"IV", macro=>"1"},
-            {name=>"RPI_GPIO_P1_26", type=>"IV", macro=>"1"});
+            {name=>"RPI_GPIO_P1_26", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_03", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_05", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_07", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_08", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_10", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_11", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_12", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_13", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_15", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_16", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_18", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_19", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_21", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_22", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_23", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_24", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P1_26", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P5_03", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P5_04", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P5_05", type=>"IV", macro=>"1"},
+            {name=>"RPI_V2_GPIO_P5_06", type=>"IV", macro=>"1"});
 
 print constant_types(), "\n"; # macro defs
 foreach (C_constant ("Device::BCM2835", 'constant', 'IV', $types, undef, 3, @names) ) {
@@ -1866,95 +2010,3 @@ __END__
   return PERL_constant_NOTFOUND;
 }
 
-
-#### XS Section:
-void
-constant(sv)
-    PREINIT:
-#ifdef dXSTARG
-	dXSTARG; /* Faster if we have it.  */
-#else
-	dTARGET;
-#endif
-	STRLEN		len;
-        int		type;
-	IV		iv;
-	/* NV		nv;	Uncomment this if you need to return NVs */
-	/* const char	*pv;	Uncomment this if you need to return PVs */
-    INPUT:
-	SV *		sv;
-        const char *	s = SvPV(sv, len);
-    PPCODE:
-        /* Change this to constant(aTHX_ s, len, &iv, &nv);
-           if you need to return both NVs and IVs */
-	type = constant(aTHX_ s, len, &iv);
-      /* Return 1 or 2 items. First is error message, or undef if no error.
-           Second, if present, is found value */
-        switch (type) {
-        case PERL_constant_NOTFOUND:
-          sv =
-	    sv_2mortal(newSVpvf("%s is not a valid Device::BCM2835 macro", s));
-          PUSHs(sv);
-          break;
-        case PERL_constant_NOTDEF:
-          sv = sv_2mortal(newSVpvf(
-	    "Your vendor has not defined Device::BCM2835 macro %s, used",
-				   s));
-          PUSHs(sv);
-          break;
-        case PERL_constant_ISIV:
-          EXTEND(SP, 1);
-          PUSHs(&PL_sv_undef);
-          PUSHi(iv);
-          break;
-	/* Uncomment this if you need to return NOs
-        case PERL_constant_ISNO:
-          EXTEND(SP, 1);
-          PUSHs(&PL_sv_undef);
-          PUSHs(&PL_sv_no);
-          break; */
-	/* Uncomment this if you need to return NVs
-        case PERL_constant_ISNV:
-          EXTEND(SP, 1);
-          PUSHs(&PL_sv_undef);
-          PUSHn(nv);
-          break; */
-	/* Uncomment this if you need to return PVs
-        case PERL_constant_ISPV:
-          EXTEND(SP, 1);
-          PUSHs(&PL_sv_undef);
-          PUSHp(pv, strlen(pv));
-          break; */
-	/* Uncomment this if you need to return PVNs
-        case PERL_constant_ISPVN:
-          EXTEND(SP, 1);
-          PUSHs(&PL_sv_undef);
-          PUSHp(pv, iv);
-          break; */
-	/* Uncomment this if you need to return SVs
-        case PERL_constant_ISSV:
-          EXTEND(SP, 1);
-          PUSHs(&PL_sv_undef);
-          PUSHs(sv);
-          break; */
-	/* Uncomment this if you need to return UNDEFs
-        case PERL_constant_ISUNDEF:
-          break; */
-	/* Uncomment this if you need to return UVs
-        case PERL_constant_ISUV:
-          EXTEND(SP, 1);
-          PUSHs(&PL_sv_undef);
-          PUSHu((UV)iv);
-          break; */
-	/* Uncomment this if you need to return YESs
-        case PERL_constant_ISYES:
-          EXTEND(SP, 1);
-          PUSHs(&PL_sv_undef);
-          PUSHs(&PL_sv_yes);
-          break; */
-        default:
-          sv = sv_2mortal(newSVpvf(
-	    "Unexpected return type %d while processing Device::BCM2835 macro %s, used",
-               type, s));
-          PUSHs(sv);
-        }

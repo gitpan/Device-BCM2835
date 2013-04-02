@@ -183,6 +183,27 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
         RPI_GPIO_P1_23
         RPI_GPIO_P1_24
         RPI_GPIO_P1_26
+        RPI_V2_GPIO_P1_03
+        RPI_V2_GPIO_P1_05
+        RPI_V2_GPIO_P1_07
+        RPI_V2_GPIO_P1_08
+        RPI_V2_GPIO_P1_10
+        RPI_V2_GPIO_P1_11
+        RPI_V2_GPIO_P1_12
+        RPI_V2_GPIO_P1_13
+        RPI_V2_GPIO_P1_15
+        RPI_V2_GPIO_P1_16
+        RPI_V2_GPIO_P1_18
+        RPI_V2_GPIO_P1_19
+        RPI_V2_GPIO_P1_21
+        RPI_V2_GPIO_P1_22
+        RPI_V2_GPIO_P1_23
+        RPI_V2_GPIO_P1_24
+        RPI_V2_GPIO_P1_26
+        RPI_V2_GPIO_P5_03
+        RPI_V2_GPIO_P5_04
+        RPI_V2_GPIO_P5_05
+        RPI_V2_GPIO_P5_06
 ) ] );
 
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
@@ -353,9 +374,30 @@ our @EXPORT = qw(
         RPI_GPIO_P1_23
         RPI_GPIO_P1_24
         RPI_GPIO_P1_26
+        RPI_V2_GPIO_P1_03
+        RPI_V2_GPIO_P1_05
+        RPI_V2_GPIO_P1_07
+        RPI_V2_GPIO_P1_08
+        RPI_V2_GPIO_P1_10
+        RPI_V2_GPIO_P1_11
+        RPI_V2_GPIO_P1_12
+        RPI_V2_GPIO_P1_13
+        RPI_V2_GPIO_P1_15
+        RPI_V2_GPIO_P1_16
+        RPI_V2_GPIO_P1_18
+        RPI_V2_GPIO_P1_19
+        RPI_V2_GPIO_P1_21
+        RPI_V2_GPIO_P1_22
+        RPI_V2_GPIO_P1_23
+        RPI_V2_GPIO_P1_24
+        RPI_V2_GPIO_P1_26
+        RPI_V2_GPIO_P5_03
+        RPI_V2_GPIO_P5_04
+        RPI_V2_GPIO_P5_05
+        RPI_V2_GPIO_P5_06
 );
 
-our $VERSION = '1.7';
+our $VERSION = '1.8';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -945,6 +987,27 @@ None by default.
         RPI_GPIO_P1_23
         RPI_GPIO_P1_24
         RPI_GPIO_P1_26
+        RPI_V2_GPIO_P1_03
+        RPI_V2_GPIO_P1_05
+        RPI_V2_GPIO_P1_07
+        RPI_V2_GPIO_P1_08
+        RPI_V2_GPIO_P1_10
+        RPI_V2_GPIO_P1_11
+        RPI_V2_GPIO_P1_12
+        RPI_V2_GPIO_P1_13
+        RPI_V2_GPIO_P1_15
+        RPI_V2_GPIO_P1_16
+        RPI_V2_GPIO_P1_18
+        RPI_V2_GPIO_P1_19
+        RPI_V2_GPIO_P1_21
+        RPI_V2_GPIO_P1_22
+        RPI_V2_GPIO_P1_23
+        RPI_V2_GPIO_P1_24
+        RPI_V2_GPIO_P1_26
+        RPI_V2_GPIO_P5_03
+        RPI_V2_GPIO_P5_04
+        RPI_V2_GPIO_P5_05
+        RPI_V2_GPIO_P5_06
 
 =head1 SEE ALSO
 

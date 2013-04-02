@@ -55,7 +55,9 @@ if  (eval {require ExtUtils::Constant; 1}) {
                  BCM2835_SPI0_CS_RXF BCM2835_SPI0_CS_RXR BCM2835_SPI0_CS_TA
                  BCM2835_SPI0_CS_TE_EN BCM2835_SPI0_CS_TXD BCM2835_SPI0_DC
                  BCM2835_SPI0_DLEN BCM2835_SPI0_FIFO BCM2835_SPI0_LTOH HIGH
-                 LOW),
+                 LOW
+
+        ),
               {name=>"BCM2835_GPIO_FSEL_ALT0", macro=>"1"},
               {name=>"BCM2835_GPIO_FSEL_ALT1", macro=>"1"},
               {name=>"BCM2835_GPIO_FSEL_ALT2", macro=>"1"},
@@ -114,7 +116,30 @@ if  (eval {require ExtUtils::Constant; 1}) {
               {name=>"RPI_GPIO_P1_22", macro=>"1"},
               {name=>"RPI_GPIO_P1_23", macro=>"1"},
               {name=>"RPI_GPIO_P1_24", macro=>"1"},
-              {name=>"RPI_GPIO_P1_26", macro=>"1"});
+              {name=>"RPI_GPIO_P1_26", macro=>"1"},
+
+              {name=>"RPI_V2_GPIO_P1_03", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_05", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_07", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_08", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_10", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_11", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_12", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_13", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_15", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_16", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_18", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_19", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_21", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_22", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_23", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_24", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P1_26", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P5_03", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P5_04", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P5_05", macro=>"1"},
+              {name=>"RPI_V2_GPIO_P5_06", macro=>"1"});
+
   ExtUtils::Constant::WriteConstants(
                                      NAME         => 'Device::BCM2835',
                                      NAMES        => \@names,
