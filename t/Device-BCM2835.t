@@ -117,10 +117,12 @@ ok(Device::BCM2835::gpio_pad(&Device::BCM2835::BCM2835_PAD_GROUP_GPIO_0_27) == 0
 Device::BCM2835::gpio_set_pad(&Device::BCM2835::BCM2835_PAD_GROUP_GPIO_0_27, &Device::BCM2835::BCM2835_PAD_HYSTERESIS_ENABLED | &Device::BCM2835::BCM2835_PAD_DRIVE_10mA);
 
 Device::BCM2835::delay(10);
-Device::BCM2835::delayMicroseconds(10);
+# Causes problem is run as an ordinary user:
+#Device::BCM2835::delayMicroseconds(10);
 Device::BCM2835::gpio_write(&Device::BCM2835::RPI_GPIO_P1_11, 1);
 
-Device::BCM2835::gpio_set_pud(&Device::BCM2835::RPI_GPIO_P1_11, &Device::BCM2835::BCM2835_GPIO_PUD_UP);
+# Causes problem is run as an ordinary user:
+#Device::BCM2835::gpio_set_pud(&Device::BCM2835::RPI_GPIO_P1_11, &Device::BCM2835::BCM2835_GPIO_PUD_UP);
 
 Device::BCM2835::spi_begin();
 Device::BCM2835::spi_end();
